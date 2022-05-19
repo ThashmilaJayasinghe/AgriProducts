@@ -15,19 +15,42 @@ export default function ViewItemFarmer(){
     },[])
 
     return (
-        <div>
-            <h1>Welcome to view item page</h1>
+        <div className='container'>
+            <h1>view item </h1>
             <br/>
+            <form>
 
-            <h4>Item title : {title}</h4>
-            <h4>Item price : {price}</h4>
-            <h4>Item description : {description}</h4>
 
-            <br/>
-            <Link to={'/FarmerHome'}>
-                <button>Back</button>
-            </Link>
+                <div className="form-group col-md-6">
+                    <label><b>Item Name</b> </label>
+                    <input type="text" id="title" className="form-control" placeholder="Enter Item Name"
+                           value={title}
+                    readOnly/>
+                </div>
 
+
+                <br/>
+
+                <div className="form-group col-md-6">
+                    <label><b>Price</b> </label>
+                    <input type="text" id="price" className="form-control" placeholder="Enter Price" value={price}
+                           readOnly/>
+                </div>
+
+                <br/>
+                <div className="form-group col-md-6">
+                    <label><b>Description </b></label>
+                    <input type="text" id="description" className="form-control" placeholder="Enter Quantity"
+                           value={description} readOnly/>
+                </div>
+                <br/>
+
+                <br/>
+                <Link to={'/FarmerHome'}>
+                    <button>Back</button>
+                </Link>
+
+            </form>
             <br/><br/>
             <button>Add Cart</button>
 

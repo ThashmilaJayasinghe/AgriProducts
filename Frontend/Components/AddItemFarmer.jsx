@@ -17,7 +17,7 @@ export default function AddItemFarmer(){
 
         axios.post('http://localhost:8080/item', newItem).then(()=>{
             alert(`The item added Successfully`)
-
+            window.location.href = "/FarmerHome";
 
         }).catch((err)=>{
             alert(err)
@@ -25,44 +25,51 @@ export default function AddItemFarmer(){
     }
 
     return(
-        <div>
+        <div className='container'>
             <h2>Add Item</h2>
 
             <form onSubmit={handleSubmit}>
 
-                <label>Item Title </label>
-                <input type="text" id="title" placeholder="Enter Item Title here.." value={title}
+                <div className="form-group col-md-6">
+                    <label><b>Item Title</b> </label>
+                <input type="text" id="title" class="form-control" placeholder="Enter Item Title here.." value={title}
                        onChange={(e) =>(
                            setTitle(e.target.value)
                        )}
                 />
+                </div>
                 <br/>
 
-                <label>Price </label>
-                <input type="text" id="price" placeholder="Enter Price" value={price}
+                <div className="form-group col-md-6">
+                    <label><b>Price </b></label>
+                <input type="number"  step="any" id="price" class="form-control" placeholder="Enter Price" value={price}
                        onChange={ (e) =>(
                            setPrice(e.target.value)
                        )}
                 />
+                </div>
                 <br/>
 
-                <label>Description </label>
-                <input type="text" id="description" placeholder="Enter Description" value={description}
+                <div className="form-group col-md-6">
+                    <label><b>Description</b> </label>
+                <input type="text" id="description" class="form-control" placeholder="Enter Description" value={description}
                        onChange={(e)=>(
                            setDescrip(e.target.value)
                        )}
                 />
+                </div>
                 <br/>
                 <br/>
+                <center>
+                    <input type="submit"/>
+                </center>
 
-                <input type="submit"/>
             </form>
 
             <br/>
-            <br/>
-            {/*<Link to={'#'}>*/}
-            {/*    <button >Back</button>*/}
-            {/*</Link>*/}
+            <Link to={'/FarmerHome'}>
+                <button >Back</button>
+            </Link>
         </div>
     )
 }
