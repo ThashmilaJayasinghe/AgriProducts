@@ -1,4 +1,5 @@
 import React,{useEffect,useState} from "react";
+import {Link} from "react-router-dom";
 import axios from "axios";
 
 export default function cart(){
@@ -53,6 +54,9 @@ export default function cart(){
                     <h5>Rs:{cartAll}</h5>
                 </tbody>
                 </table>
+            <Link to='/payment'>
+            <button>Set the Payment</button>
+            </Link>
 
         </div>
     )

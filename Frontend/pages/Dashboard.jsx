@@ -15,10 +15,6 @@ function Dashboard() {
     const {user} = useSelector((state) => state.auth) //used to get the user
 
 
-
-    const [items, setItems] = useState([]);
-    const [search, setSearch] = useState("");
-
     const [items, setItems] = useState([]);
     const [search, setSearch] = useState("");
 
@@ -129,7 +125,7 @@ function Dashboard() {
                                                 <td>{item.description}</td>
                                                 <td>{item.price}</td>
                                                 <td>
-                                                    <Link to='/'>
+                                                    <Link to={'/AddQuantity/'+item._id}>
                                                         <button className='btnIcon' onClick={() => setItem(item)}>
                                                             {/*<i className='bx bx-edit'></i>*/}
                                                             view
