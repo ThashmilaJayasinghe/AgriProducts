@@ -55,7 +55,6 @@ const registerUser = async (req, res) => {
 // @route   POST /api/users/login
 // @access  Public
 const loginUser = async (req, res) => {
-    const{email, password} = req.body
 
     // Check for user email
     const user = await User.findOne({email})
