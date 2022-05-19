@@ -18,6 +18,7 @@ const Payment = () => {
 
     const [modalShow, setModalShow] = useState(false);
 
+
     const onPayClick = () => {
         setIsPayClick(true)
 
