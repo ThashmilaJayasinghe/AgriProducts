@@ -1,13 +1,22 @@
 import React from "react";
 import {useEffect,useState} from "react";
 import axios from "axios";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import {useSelector} from "react-redux";
 
 export default function Item(){
+
+    const navigate = useNavigate()
+    const {user} = useSelector((state) => state.auth) //used to get the user
 
     const [items, setItems] = useState([]);
 
     useEffect(() =>{
+
+        if(!user) {
+            navigate('/')
+        }
+
         function getItems(){
             axios.get("http://localhost:8080/item").then((res) => {
                 console.log(res.data);
@@ -17,7 +26,7 @@ export default function Item(){
             })
         }
         getItems();
-    }, [])
+    }, [user, navigate])
 
     return(
         <div className="container">

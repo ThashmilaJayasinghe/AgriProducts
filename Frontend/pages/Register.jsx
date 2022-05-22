@@ -1,8 +1,6 @@
 import {useState, useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {useNavigate} from 'react-router-dom'
-// import {toast} from 'react-toastify'
-// import {FaUser} from 'react-icons/fa'
 import {register, reset} from '../features/auth/authSlice'
 import Spinner from '../components/Spinner'
 
@@ -32,7 +30,7 @@ function Register() {
 
         if(isSuccess || user){
             console.log('success')
-            navigate('/dash')
+            user.role === 'buyer' ? navigate('/dash') : navigate('/FarmerHome')
         }
 
         dispatch(reset())
@@ -99,15 +97,6 @@ function Register() {
                            placeholder='Enter your email'
                            onChange={onChange} />
                 </div>
-                {/*<div className="mb-3">*/}
-                {/*    <input type="text"*/}
-                {/*           className='form-control'*/}
-                {/*           name="role"*/}
-                {/*           id="role"*/}
-                {/*           value={role}*/}
-                {/*           placeholder='Enter your role'*/}
-                {/*           onChange={onChange} />*/}
-                {/*</div>*/}
                 <div className="mb-3">
                     <select
                         className="form-select"

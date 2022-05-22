@@ -15,8 +15,8 @@ import EditItemFarmer from "./Components/EditItemFarmer";
 function App(){
     return(
         <div>
-            <NavBar/>
             <BrowserRouter>
+                <NavBar/>
                 <Routes>
                     <Route path="/Cart" element={<Cart/>}/>
                     {/*<Route path='/Dashboard' element={<Dashboard/>}*/}
@@ -31,7 +31,6 @@ function App(){
                     <Route path="/edititem/:id" element={<EditItemFarmer/>}/>
                 </Routes>
             </BrowserRouter>
-
         </div>
     )
 }

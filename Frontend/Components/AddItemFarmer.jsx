@@ -28,7 +28,7 @@ export default function AddItemFarmer(){
         <div className='container'>
             <h2>Add Item</h2>
 
-            <form onSubmit={handleSubmit}>
+            <form>
 
                 <div className="form-group col-md-6">
                     <label><b>Item Title</b> </label>
@@ -61,7 +61,9 @@ export default function AddItemFarmer(){
                 <br/>
                 <br/>
                 <center>
-                    <input type="submit"/>
+                    <Link to={'/FarmerHome'}>
+                    <input type="submit" onClick={handleSubmit}/>
+                    </Link>
                 </center>
 
             </form>

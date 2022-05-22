@@ -35,7 +35,7 @@ export default function EditItemFarmer(){
         <div className='container'>
             <h1>Edit Item Page</h1>
 
-            <form onSubmit={sendData}>
+            <form >
 
 
                 <div className="form-group col-md-6">
@@ -72,7 +72,9 @@ export default function EditItemFarmer(){
                 <br/>
 
                 <center>
-                    <input type="submit"/>
+                    <Link to={'/FarmerHome'}>
+                    <input type="submit" onClick={sendData}/>
+                    </Link>
                 </center>
 
                 <br/>

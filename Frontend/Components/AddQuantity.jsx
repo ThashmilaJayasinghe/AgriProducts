@@ -1,8 +1,11 @@
 import React,{useState,useEffect} from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
+import {useSelector} from "react-redux";
 
 export default function AddQuantity(){
+
+    const {user} = useSelector((state) => state.auth)
 
     const [id, setID] = useState('')
     const [title, setTitle] = useState("");
@@ -11,7 +14,7 @@ export default function AddQuantity(){
     // const [description, setDescrip] = useState("");
 
     useEffect(()=>{
-        setID(localStorage.getItem('_id'))
+        setID(localStorage.getItem('id'))
         setTitle(localStorage.getItem('title'))
         setPrice(localStorage.getItem('price'))
     },[])
@@ -26,6 +29,7 @@ export default function AddQuantity(){
     //             alert(err)
     //         })
     // }
+    // console.log("cart id",user._id)
     function handleSubmit(event) {
         const newItem = {
             id,
@@ -34,8 +38,10 @@ export default function AddQuantity(){
             quantity
             // description
         }
-        console.log("handle submit called")
-        axios.post('http://localhost:8000/cart/7', newItem)
+        console.log("handle submit called",newItem)
+        // console.log("handle submit called",user._id)
+
+        axios.post('http://localhost:8000/cart/'+user._id, newItem)
             .then(()=>{
             alert(`The item added Successfully`)
 
@@ -44,11 +50,13 @@ export default function AddQuantity(){
         })
     }
 
+    console.log(id,title,price,quantity)
+
     return(
         <div>
             <h2>Add Quantity for Item</h2>
 
-            <form onSubmit={handleSubmit}>
+            <form >
 
                 <label>Item Title </label>
                 <input type="text" id="title" placeholder="Enter Item Title here.." value={title}
@@ -76,8 +84,9 @@ export default function AddQuantity(){
                 />
                 <br/>
                 <br/>
-
+            <Link to={'/Cart'}>
                 <button type='submit' onClick={handleSubmit} >Add</button>
+            </Link>
             </form>
 
             <br/>

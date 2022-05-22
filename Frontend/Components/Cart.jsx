@@ -1,14 +1,16 @@
 import React,{useEffect,useState} from "react";
 import {Link} from "react-router-dom";
 import axios from "axios";
+import {useSelector} from "react-redux";
 
 export default function cart(){
 
+    const {user} = useSelector((state) => state.auth)
     const [cartItems,setCartItems] = useState([])
     const [cartAll,setCartAll] = useState([])
     useEffect(()=>{
         const getCartItems = ()=>{
-        axios.get('http://localhost:8000/cart/6')
+        axios.get('http://localhost:8000/cart/'+user._id)
             .then((res) =>{
                 const all = res.data.bill;
                 const data = res.data.items;
@@ -16,6 +18,7 @@ export default function cart(){
                 setCartItems(data);
                 setCartAll(all);
 
+                console.log(res);
                 console.log(d)
                 console.log(data)
                 console.log(all)

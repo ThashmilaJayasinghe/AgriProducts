@@ -52,9 +52,6 @@ export default function ViewItemFarmer(){
 
             </form>
             <br/><br/>
-            <Link to={'/FarmerHome'}>
-                <button>Add Cart</button>
-            </Link>
 
         </div>
     )

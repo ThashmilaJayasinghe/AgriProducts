@@ -1,8 +1,8 @@
 import axios from 'axios'
 
-//The rest of the path is under "proxy" in the FE package.json
+
 const API_URL = 'http://localhost:7350/api/users/'
-// const API_URL = '/api/users/'
+
 
 //Register user
 const register = async (userData) => {

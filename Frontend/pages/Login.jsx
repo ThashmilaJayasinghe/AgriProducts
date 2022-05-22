@@ -1,8 +1,7 @@
 import {useState, useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {useNavigate} from 'react-router-dom'
-// import {toast} from 'react-toastify'
-import {login, logout, reset} from '../features/auth/authSlice'
+import {login, reset} from '../features/auth/authSlice'
 import Spinner from '../components/Spinner'
 
 
@@ -14,7 +13,6 @@ function Login() {
         password: '',
     })
 
-    // const {name, email, password, password2, role} = formData
     const {email, password, role} = formData
 
     const navigate = useNavigate()
@@ -22,20 +20,15 @@ function Login() {
 
     const {user, isLoading, isError, isSuccess, message} = useSelector((state) => state.auth)
 
-    const toRegister = () => {
-        navigate('/register')
-    }
-
     useEffect(() => {
 
         if(isError) {
-            // toast.error(message)
-            alert(message)
+            alert('Incorrect Credentials')
         }
 
         if(isSuccess || user){
-            console.log('success')
-            navigate('/dash')
+            console.log('role', user.role)
+            user.role === 'buyer' ? navigate('/dash') : navigate('/FarmerHome')
         }
 
         dispatch(reset())
@@ -68,7 +61,6 @@ function Login() {
         <div className='container'>
         <div>
             <h1>
-                {/*<FaSignInAlt />Login*/}
                 Login
             </h1>
         </div>
@@ -100,15 +92,6 @@ function Login() {
                 </div>
             </form>
         </div>
-
-           <div>
-               <p>New User? Register Now!</p>
-               <button className='btn' onClick={toRegister}>
-                   {/*<FaSignOutAlt /> Logout*/}
-                   Register
-               </button>
-           </div>
-
     </div>
     )
 
