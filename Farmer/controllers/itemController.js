@@ -22,6 +22,8 @@ module.exports.post_item = (req,res) => {
         price
     })
 
+    console.log(newItem)
+
     newItem.save()
         .then(()=>{
             res.json('Item Added')

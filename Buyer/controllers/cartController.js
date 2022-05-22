@@ -2,7 +2,9 @@ const Cart = require('../models/cartModel');
 const Item = require('../models/itemModel')
 
 const add_to_cart = async (req,res)=>{
-    const userId = req.params.id;
+    // const userId = req.params.id;
+    const userId = req.body.id;
+
     const { itemId , quantity} = req.body;
 
     console.log(itemId)
@@ -57,7 +59,11 @@ const add_to_cart = async (req,res)=>{
 }
 
 const get_cart_items = async (req,res)=>{
-    const userId = req.params.id;
+
+    const userId = req.body.id;
+
+    // const userId = req.params.id;
+
     try{
         let cart = await Cart.findOne({userId});
         console.log(cart);

@@ -78,6 +78,9 @@ const loginUser = async (req, res) => {
 // @route   GET /api/users/me
 // @access  Private
 const getMe = async (req, res) => {
+
+    console.log("getMe called")
+
     const {_id, name, email, role} = await User.findById(req.user.id)
 
     res.status(200).json({

@@ -6,6 +6,8 @@ const nodemailer = require("nodemailer");
 
 const confirmPayment = async (req, res) => {
 
+    console.log("called success")
+
     const emailTemplate = `
     <h3>Dear customer,</h3>
     <h3 style="padding-top: -5px; margin-top: -5px">Please to enter the following code to confirm your payment</h3>
@@ -45,7 +47,7 @@ const confirmPayment = async (req, res) => {
     }
 
 
-    main().then(() => console.log("successfully called"))
+    // main().then(() => console.log("successfully called"))
 
     try{
         const result = await emailSchema.create({

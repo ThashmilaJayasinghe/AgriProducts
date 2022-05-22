@@ -4,6 +4,8 @@ const Nexmo = require("nexmo");
 
 const confirmOTP = async (req, res) => {
 
+    console.log(req.body)
+
     const mobileNumber = req.body.customerMobileNumber;
     const OTP_code = req.body.OTPCode;
 
@@ -20,7 +22,7 @@ const confirmOTP = async (req, res) => {
         await nexmo.message.sendSms(from, to, text);
     }
 
-    sendSMS().then(() => console.log("SMS successfully sent!!!"))
+    // sendSMS().then(() => console.log("SMS successfully sent!!!"))
 
     try {
         const result = await SmsSchema.create({
