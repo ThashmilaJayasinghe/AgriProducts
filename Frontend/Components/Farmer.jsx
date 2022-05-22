@@ -35,7 +35,7 @@ export default function Item(){
             </center>
             <br/>
             <Link to={'/AddItem'}>
-                <button>Add Item</button>
+                <button class="btn btn-success">Add Item</button>
             </Link>
             <br/>
             <center>
@@ -97,18 +97,18 @@ export default function Item(){
 
                             <td>
                                 <Link to={'/viewitem/'+item._id}>
-                                    <button onClick={()=>passItem(item)}>View</button>
+                                    <button onClick={()=>passItem(item)} class="btn btn-success">View</button>
                                 </Link>
                             </td>
 
                             <td>
                                 <Link to={'/edititem/'+item._id}>
-                                    <button onClick={()=>passItem(item)}>Edit</button>
+                                    <button onClick={()=>passItem(item)} class="btn btn-secondary">Edit</button>
                                 </Link>
                             </td>
 
                             <td>
-                                <button onClick={()=>onDelete(item._id)}>Delete</button>
+                                <button onClick={()=>onDelete(item._id)} class="btn btn-danger">Delete</button>
                             </td>
 
                         </tr>

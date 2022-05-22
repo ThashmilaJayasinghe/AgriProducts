@@ -31,22 +31,23 @@ function Dashboard() {
 
     return (
         <div>
-            <div>
+            <div style={{marginTop:"40px", marginLeft:"50px"}}>
                 {/* code below: if user (i.e. logged in), show name */}
-                <h1>Welcome {user && user.name}</h1>
+                <h1 >Welcome {user && user.name}</h1>
                 <p>Buyer Dashboard</p>
                 <br/>
-                <h2 className="page-header">
+                <h3 className="page-header">
                     Agri Items
-                </h2>
+                </h3>
                 <br/>
             </div>
-            <div className="topnav__search">
+            <div className="topnav__search" style={{marginLeft:"40px"}}>
                 <input type="text" placeholder='Search By Title...' onChange={(e) => {
                     setSearch(e.target.value);
                 }}/>
                 <i className='bx bx-search'></i>
             </div>
+            <br/>
             <div className="row">
                 <div className="col-12">
                     <div className="card">
@@ -90,9 +91,9 @@ function Dashboard() {
                                                 <td>{item.price}</td>
                                                 <td>
                                                     <Link to={'/AddQuantity/'+item._id}>
-                                                        <button className='btnIcon' onClick={() => setItem(item)}>
+                                                        <button className='btnIcon' class="btn btn-success" onClick={() => setItem(item)}>
                                                             {/*<i className='bx bx-edit'></i>*/}
-                                                            view
+                                                            Add Quantity
                                                         </button>
                                                     </Link>
                                                 </td>

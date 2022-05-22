@@ -47,11 +47,12 @@ export default function ViewItemFarmer(){
 
                 <br/>
                 <Link to={'/FarmerHome'}>
-                    <button>Back</button>
+                    <button class="btn btn-secondary">Back</button>
                 </Link>
 
             </form>
             <br/><br/>
+
 
         </div>
     )

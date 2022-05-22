@@ -68,7 +68,7 @@ function Register() {
     }
 
     return (
-        <div className='container'>
+        <div className='container' style={{marginTop:"30px", width:"70%",margin:"auto"}}>
         <div>
             <h1>
                 {/*<FaUser />Register*/}
@@ -79,7 +79,7 @@ function Register() {
 
         <div>
             <form onSubmit={onSubmit}>
-                <div className="mb-3">
+                <div className="form-group col-md-6">
                     <input type="text"
                            className='form-control'
                            name="name"
@@ -88,7 +88,8 @@ function Register() {
                            placeholder='Enter your name'
                            onChange={onChange} />
                 </div>
-                <div className="mb-3">
+                <br/>
+                <div className="form-group col-md-6">
                     <input type="email"
                            className='form-control'
                            name="email"
@@ -97,7 +98,8 @@ function Register() {
                            placeholder='Enter your email'
                            onChange={onChange} />
                 </div>
-                <div className="mb-3">
+                <br/>
+                <div className="form-group col-md-6">
                     <select
                         className="form-select"
                         aria-label="Default select example"
@@ -111,7 +113,8 @@ function Register() {
                         <option value="farmer">farmer</option>
                     </select>
                 </div>
-                <div className="mb-3">
+                <br/>
+                <div className="form-group col-md-6">
                     <input type="password"
                            className='form-control'
                            name="password"
@@ -120,7 +123,8 @@ function Register() {
                            placeholder='Enter password'
                            onChange={onChange} />
                 </div>
-                <div className="mb-3">
+                <br/>
+                <div className="form-group col-md-6">
                     <input type="password"
                            className='form-control'
                            name="password2"
@@ -129,11 +133,12 @@ function Register() {
                            placeholder='Confirm password'
                            onChange={onChange} />
                 </div>
-                <div className="mb-3">
-                    <button type='submit' className='btn btn-block'>
+                <br/>
+
+                    <button type='submit' class="btn btn-success">
                         Submit
                     </button>
-                </div>
+
             </form>
         </div>
         </div>

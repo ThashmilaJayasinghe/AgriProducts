@@ -30,14 +30,13 @@ export default function cart(){
         getCartItems();
     },[])
     return(
-        <div className="container">
+        <div className="container" style={{marginTop:"40px"}}>
             <table className="table">
             <thead>
         <tr>
             <th>Name of product</th>
             <th>Price</th>
             <th>Quantity</th>
-            <th>Delete Item</th>
             </tr>
         </thead>
                 <tbody>
@@ -53,12 +52,13 @@ export default function cart(){
                             )
                         })
                     }
+                    <br/>
                     <h2>The total bill amount</h2>
                     <h5>Rs:{cartAll}</h5>
                 </tbody>
                 </table>
             <Link to='/payment'>
-            <button>Set the Payment</button>
+            <button class="btn btn-success">Set the Payment</button>
             </Link>
 
         </div>

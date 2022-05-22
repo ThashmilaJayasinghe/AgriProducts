@@ -58,7 +58,7 @@ function Login() {
     }
 
     return (
-        <div className='container'>
+        <div className='container' style={{marginTop:"30px", width:"70%",margin:"auto"}}>
         <div>
             <h1>
                 Login
@@ -67,7 +67,7 @@ function Login() {
 
         <div>
             <form onSubmit={onSubmit}>
-                <div className="mb-3">
+                <div className="form-group col-md-6">
                     <input type="email"
                            className='form-control'
                            name="email"
@@ -76,7 +76,8 @@ function Login() {
                            placeholder='Enter your email'
                            onChange={onChange} />
                 </div>
-                <div className="mb-3">
+                <br/>
+                <div className="form-group col-md-6">
                     <input type="password"
                            className='form-control'
                            name="password"
@@ -85,11 +86,11 @@ function Login() {
                            placeholder='Enter password'
                            onChange={onChange} />
                 </div>
-                <div className="mb-3">
-                    <button type='submit' className='btn btn-block'>
+                <br/>
+
+                    <button type='submit' class="btn btn-success" >
                         Submit
                     </button>
-                </div>
             </form>
         </div>
     </div>

@@ -53,39 +53,45 @@ export default function AddQuantity(){
     console.log(id,title,price,quantity)
 
     return(
-        <div>
+        <div className='container' style={{width:"70%",margin:"auto"}}>
             <h2>Add Quantity for Item</h2>
 
             <form >
 
+                <div className="form-group col-md-6">
                 <label>Item Title </label>
-                <input type="text" id="title" placeholder="Enter Item Title here.." value={title}
+                <input type="text" class="form-control" id="title" placeholder="Enter Item Title here.." value={title}
                        readOnly
                        onChange={(e) =>(
                            setTitle(e.target.value)
                        )}
                 />
+                </div>
                 <br/>
 
+                <div className="form-group col-md-6">
                 <label>Price </label>
-                <input type="text" id="price" placeholder="Enter Price" value={price}
+                <input type="text" class="form-control" id="price" placeholder="Enter Price" value={price}
                        readOnly
                        onChange={ (e) =>(
                            setPrice(e.target.value)
                        )}
                 />
+                </div>
                 <br/>
 
+                <div className="form-group col-md-6">
                 <label>Quantity </label>
-                <input type="number" id="quantity" placeholder="Enter Quantity"
+                <input type="number" class="form-control" id="quantity" placeholder="Enter Quantity"
                        onChange={(e)=>(
                            setQuantity(e.target.value)
                        )}
                 />
+                </div>
                 <br/>
                 <br/>
             <Link to={'/Cart'}>
-                <button type='submit' onClick={handleSubmit} >Add</button>
+                <button type='submit' class="btn btn-success" onClick={handleSubmit} >Add</button>
             </Link>
             </form>
 
