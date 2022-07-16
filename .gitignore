@@ -1,0 +1,15 @@
+./nodemodules
+nodemodules
+.package-lock.json
+
+
+/Buyer/node_modules
+/Authentication/node_modules
+/EmailService/node_modules
+/Farmer/node_modules
+/Frontend/node_modules
+/MobilePaymentService/node_modules
+/PaymentService/node_modules
+/SMS_Service/node_modules
+
+/.history
