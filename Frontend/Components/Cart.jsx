@@ -29,6 +29,14 @@ export default function cart(){
     }
         getCartItems();
     },[])
+
+    const onPayClick = () => {
+        localStorage.setItem("userEmail", user.email)
+        localStorage.setItem("userName", user.name)
+        localStorage.setItem("totAmount", cartAll.toString())
+    }
+
+
     return(
         <div className="container" style={{marginTop:"40px"}}>
             <table className="table">
@@ -58,7 +66,7 @@ export default function cart(){
                 </tbody>
                 </table>
             <Link to='/payment'>
-            <button class="btn btn-success">Set the Payment</button>
+            <button class="btn btn-success" onClick={onPayClick}>Set the Payment</button>
             </Link>
 
         </div>

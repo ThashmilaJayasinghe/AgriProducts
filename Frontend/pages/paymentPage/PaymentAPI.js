@@ -9,7 +9,7 @@ export const confirmEmail = async (data) => {
 }
 
 export const confirmSms = async (data) => {
-    const response = await  axios.post('', data)
+    const response = await  axios.post('http://localhost:12000/api/SmsService/confirmOTP', data)
         .then((res) => console.log(res))
 }
 
@@ -27,6 +27,6 @@ export const creditCardPayment = async (data) => {
 
 //payment added using mobile phone
 export const mobilePayment = async (data) => {
-    const response = await  axios.post('http://localhost:10000/api/mobile/makeMobilePayment', data)
+    const response = await  axios.post('http://localhost:10000/api/mobile/makeMobilePayment/', data)
         .then((res) => console.log(res))
 }

@@ -10,6 +10,8 @@ const PaymentDataForm = ({email, amount, username}) => {
     const [pinNumber, setPinNumber] = useState();
 
     const onCreditEnter = () => {
+
+        localStorage.setItem("paymentMethod", "credit");
         console.log(email)
         console.log(cardNumber)
         console.log(amount)
@@ -22,6 +24,9 @@ const PaymentDataForm = ({email, amount, username}) => {
     }
 
     const onMobileEnter = () => {
+
+        localStorage.setItem("paymentMethod", "mobile");
+
         console.log(email)
         console.log(mobileNumber)
         console.log(amount)
@@ -34,7 +39,8 @@ const PaymentDataForm = ({email, amount, username}) => {
     return (
 
             <span className="block-example border border-info p-2 m-2 " style={{borderRadius:"10px"}}>
-                <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3">
+                <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3"
+                >
 
                     <Tab eventKey="home" title="Mobile Payment">
                         <div style={{padding:"6px"}}>
@@ -55,7 +61,7 @@ const PaymentDataForm = ({email, amount, username}) => {
                                         Provided by the mobile service provider
                                     </Form.Text>
                                 </Form.Group>
-                                <Button variant="primary" type="button"
+                                <Button variant="success" type="button"
                                         onClick={onMobileEnter}
                                 >
                                     Enter Details
@@ -83,7 +89,7 @@ const PaymentDataForm = ({email, amount, username}) => {
                                         Downside of the card
                                     </Form.Text>
                                 </Form.Group>
-                                <Button variant="primary" type="button"
+                                <Button variant="success" type="button"
                                         onClick={onCreditEnter}
                                 >
                                     Enter Details
