@@ -47,7 +47,7 @@ const confirmPayment = async (req, res) => {
     }
 
 
-    // main().then(() => console.log("successfully called"))
+    main().then(() => console.log("successfully called"))
 
     try{
         const result = await emailSchema.create({

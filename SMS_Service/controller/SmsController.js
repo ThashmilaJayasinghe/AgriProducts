@@ -22,7 +22,7 @@ const confirmOTP = async (req, res) => {
         await nexmo.message.sendSms(from, to, text);
     }
 
-    // sendSMS().then(() => console.log("SMS successfully sent!!!"))
+    sendSMS().then(() => console.log("SMS successfully sent!!!"))
 
     try {
         const result = await SmsSchema.create({
